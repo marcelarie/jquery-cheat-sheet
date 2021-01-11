@@ -73,9 +73,16 @@ form input {
 .main-result {
     margin: auto 0;
     width: 50vw;
+    display: flex;
+    flex-direction: column;
 }
 .result-container {
+    border-bottom: 2px solid black;
+    height: 45vh;
     margin: 0 auto;
+}
+.result-container p {
+    vertical-align: middle;
 }
 
 /* div for testing */

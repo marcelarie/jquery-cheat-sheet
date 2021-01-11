@@ -1,7 +1,5 @@
 const result = document.getElementById('result-container')
-const arrayOfRandomText = ['random', 'text',
-    'windows sucks', 'linux rocks']
-
+const randomTexts = ['random', 'text', 'windows sucks', 'linux rocks']
 
 //Show JS code
 function showJSCode(eventName) {
@@ -26,9 +24,11 @@ const jsEventsList = {
     htmlClick: function () {
         createElementOnResult('click on me');
         const div = document.getElementById('result-test-div')
+
+        // start of the code
         div.addEventListener('click', () => {
-            div.textContent = arrayOfRandomText[Math.floor(Math.random()
-                * arrayOfRandomText.length)]
+            div.textContent = randomTexts[Math.floor(Math.random()
+                * randomTexts.length)]
         })
     },
 
@@ -42,4 +42,4 @@ function showResult(eventName) {
 
 
 
-export {showJSCode, showResult}
+export {showJSCode, showResult, result, randomTexts, createElementOnResult}

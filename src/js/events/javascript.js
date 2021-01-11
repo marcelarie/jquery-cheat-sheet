@@ -274,6 +274,21 @@ const jsEventsList = {
             }
         })
     },
+    appendText: function () {
+        // preliminar code
+        createElementOnResult('js', 'create text', result);
+        const div = document.getElementById('result-test-div-js')
+
+        // start 
+        div.addEventListener('click', function () {
+            const h3 = document.createElement('h3')
+            h3.textContent = 'thanks for giving me life!!'
+            result.append(h3)
+        })
+    },
+    prependText: function () {
+
+    },
 
 }
 

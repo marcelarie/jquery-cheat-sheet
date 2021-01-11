@@ -174,6 +174,18 @@ const jqEventsList = {
             $(h3).one().remove()
         })
     },
+    appendText: function () {
+        // preliminar code
+        createElementOnResult('jq', 'create text', result);
+
+        // start
+        $('#result-test-div-jq').on('click', function () {
+            $('#result-container-jq').append($('<h3>Thank you for creating me!</h3>'))
+        })
+    },
+    prependText: function () {
+
+    },
 }
 
 function showResultJQ(eventName) {

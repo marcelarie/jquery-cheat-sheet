@@ -102,6 +102,18 @@ const jqEventsList = {
             $('#form-input-text-jq').attr('placeholder', 'Form submited! :)')
         })
     },
+    changeOnSelect: function () {
+        // preliminar code
+        createForm(result, 'jq', 'select')
+
+
+        //submit
+        $('#form-submit-jq').submit(e => e.preventDefault())
+        $('#form-input-text-jq').on('change', function () {
+            $(this).css('border', '10px solid yellow')
+            alert('change')
+        })
+    },
 }
 
 function showResultJQ(eventName) {

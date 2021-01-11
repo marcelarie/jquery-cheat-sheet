@@ -32,16 +32,25 @@ function loadImage(url, result) {
     return img;
 }
 
-function createForm(result, lang) {
+function createForm(result, lang, select) {
     const form = document.createElement('form')
-    const inputText = document.createElement('input')
+    let inputText = ''
+    if (select) {
+        inputText = document.createElement('select')
+        const optionA = document.createElement('option')
+        const optionB = document.createElement('option')
+        optionA.textContent = 'Option A'
+        optionB.textContent = 'Option B'
+        inputText.append(optionA, optionB)
+    } else {
+        inputText = document.createElement('input')
+    }
     inputText.placeholder = 'Write something'
     const submit = document.createElement('input')
     submit.type = 'submit'
     form.id = `form-submit-${lang}`
     inputText.id = `form-input-text-${lang}`
-    form.append(inputText)
-    form.append(submit)
+    form.append(inputText, submit)
     result.innerHTML = ''
     result.append(form)
 }
@@ -154,7 +163,20 @@ const jsEventsList = {
             inputText.value = ''
             inputText.placeholder = 'Form submited! :)'
         })
+    },
+    changeOnSelect: function () {
+        // preliminar code
+        createForm(result, 'js', 'select')
+        const form = document.getElementById('form-submit-js')
+        const inputText = document.getElementById('form-input-text-js')
 
+
+        // submit
+        form.addEventListener('submit', e => e.preventDefault())
+        inputText.addEventListener('change', () => {
+            form.style.border = '10px solid magenta'
+            alert('change')
+        })
     },
 
 

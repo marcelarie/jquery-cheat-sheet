@@ -100,15 +100,32 @@ const jsEventsList = {
         const div = document.getElementById('result-test-div-js')
         let img = []
         div.addEventListener('click', () => {
-            div.addEventListener('click', () => {
-                img = loadImage(
-                    'https://media4.giphy.com/media/LmNwrBhejkK9EFP504/200.gif', result)
+            img = loadImage(
+                'https://media4.giphy.com/media/LmNwrBhejkK9EFP504/200.gif', result)
+
+
+            //start
+            img.addEventListener('load', () => {
+                div.textContent = 'image loaded'
             })
         })
+    },
+    imageLoadFail: function () {
+        // preliminar code
+        createElementOnResult('js', 'load image', result)
+        const div = document.getElementById('result-test-div-js')
+        let img = []
+        div.addEventListener('click', () => {
+            img = loadImage(
+                'httpsm/media/LmNwrBhejkK9EFP504/200.gif', result)
 
-        //start
-        // document.getElementsByTagName('img').addEventListener()
 
+            //start
+            img.addEventListener('error', () => {
+                img.src = 'https://image.flaticon.com/icons/png/128/2748/2748441.png'
+                div.textContent = 'url broken'
+            })
+        })
     },
 
 

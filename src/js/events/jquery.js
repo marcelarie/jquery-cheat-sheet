@@ -69,12 +69,24 @@ const jqEventsList = {
         createElementOnResult('jq', 'load image', result)
         $('#result-test-div-jq').on('click', () => {
             img = loadImage('https://media4.giphy.com/media/LmNwrBhejkK9EFP504/200.gif', result)
-        })
 
-        //start 
-        $('img').on('load', () => {
-            console.log('image loaded')
-            $('#result-test-div-jq').text('image loaded')
+            //start 
+            $('img').on('load', () => {
+                $('#result-test-div-jq').text('image loaded')
+            })
+        })
+    },
+    imageLoadFail: function () {
+        // preliminar code
+        let img = []
+        createElementOnResult('jq', 'load image', result)
+        $('#result-test-div-jq').on('click', () => {
+            img = loadImage('httpsdia/LmNwrBhejkK9EFP504/200.gif', result)
+
+            //start 
+            $('img').attr('onerror', 'this.src="https://image.flaticon.com/icons/png/128/2748/2748441.png"').on('load', () => {
+                $('#result-test-div-jq').text('url broken')
+            })
         })
     },
 }

@@ -1,0 +1,57 @@
+:root {
+
+}
+
+* {
+    margin: unset;
+    padding: unset;
+    box-sizing: border-box;
+    text-decoration: unset;
+    color: unset;
+    padding: unset;
+}
+
+body {
+    margin: 0 auto;
+    width: 90%;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0.7em 0;
+}
+ 
+
+/* show code*/
+main { 
+    display: flex;
+}
+.main-code {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.js-code {
+    height: 45vh;
+}
+.js-code textarea { 
+    height: 45vh;
+    width: 50vw;
+}
+.jquery-code {
+    height: 45vh;
+}
+.jquery-code textarea { 
+    height: 45vh;
+    width: 50vw;
+}
+/* result */
+.main-result {
+}
+.result-container {
+    height: 45vh;
+    margin: 0 0.5em;
+}

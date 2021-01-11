@@ -32,6 +32,20 @@ function loadImage(url, result) {
     return img;
 }
 
+function createForm(result, lang) {
+    const form = document.createElement('form')
+    const inputText = document.createElement('input')
+    inputText.placeholder = 'Write something'
+    const submit = document.createElement('input')
+    submit.type = 'submit'
+    form.id = `form-submit-${lang}`
+    inputText.id = `form-input-text-${lang}`
+    form.append(inputText)
+    form.append(submit)
+    result.innerHTML = ''
+    result.append(form)
+}
+
 const jsEventsList = {
     htmlLoad: function () {
         // preliminar code
@@ -127,6 +141,21 @@ const jsEventsList = {
             })
         })
     },
+    formSubmit: function () {
+        // preliminar code
+        createForm(result, 'js')
+        const form = document.getElementById('form-submit-js')
+        const inputText = document.getElementById('form-input-text-js')
+
+        //start 
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            form.style.border = '5px solid red'
+            inputText.value = ''
+            inputText.placeholder = 'Form submited! :)'
+        })
+
+    },
 
 
 }
@@ -138,4 +167,4 @@ function showResultJS(eventName) {
 
 
 
-export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult, loadImage}
+export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm}

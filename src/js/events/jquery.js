@@ -1,4 +1,4 @@
-import {randomTexts, createElementOnResult, createInputOnResult, loadImage} from './javascript.js'
+import {randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm} from './javascript.js'
 const result = document.getElementById('result-container-jq')
 
 function showJQCode(eventName) {
@@ -87,6 +87,19 @@ const jqEventsList = {
             $('img').attr('onerror', 'this.src="https://image.flaticon.com/icons/png/128/2748/2748441.png"').on('load', () => {
                 $('#result-test-div-jq').text('url broken')
             })
+        })
+    },
+    formSubmit: function () {
+        // preliminar code
+        createForm(result, 'jq')
+
+
+        //start 
+        $('#form-submit-jq').submit(e => {
+            e.preventDefault();
+            $('#form-submit-jq').css('border', '5px solid red')
+            $('#form-input-text-jq').val('')
+            $('#form-input-text-jq').attr('placeholder', 'Form submited! :)')
         })
     },
 }

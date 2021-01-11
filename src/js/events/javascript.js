@@ -25,6 +25,13 @@ function createInputOnResult(lang, placeholder, result) {
     result.append(input)
 }
 
+function loadImage(url) {
+    const img = document.createElement('img')
+    img.src = url
+    img.name = 'img-name'
+    result.append(img)
+}
+
 const jsEventsList = {
     htmlLoad: function () {
         // preliminar code
@@ -79,13 +86,21 @@ const jsEventsList = {
     },
     changeValue: function () {
         // preliminar code
-        createInputOnResult('js', 'Put text here', result)
+        createInputOnResult('js', 'put text here', result)
         const input = document.getElementById('result-test-input-js')
 
         // start 
         input.addEventListener('input', () => {
             console.log(input.classList.toggle('big-input'))
         })
+    },
+    imageLoad: function () {
+        // preliminar code
+        createElementOnResult('js', 'load image', result)
+        const div = document.getElementById('result-test-div-js')
+        div.addEventListener('click', loadImage('https://preview.redd.it/l4ksbp3ttpa61.jpg?width=640&crop=smart&auto=webp&s=40cd316bf41cae8a3b9b9577b4a803bcf70e3761'))
+
+        //start
     },
 
 

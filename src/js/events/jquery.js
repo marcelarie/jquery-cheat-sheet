@@ -56,12 +56,19 @@ const jqEventsList = {
     },
     changeValue: function () {
         // preliminar code
-        createInputOnResult('jq', 'Put text and press enter', result)
+        createInputOnResult('jq', 'put text and press enter', result)
 
         // start 
         $('#result-test-input-jq').change(() => {
             $('#result-test-input-jq').css('padding', '+=5')
         })
+    },
+    imageLoad: function () {
+        // preliminar code
+        createElementOnResult('jq', 'load image', result)
+
+        //start 
+
     },
 }
 

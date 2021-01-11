@@ -1,4 +1,4 @@
-import {randomTexts, createElementOnResult, createInputOnResult} from './javascript.js'
+import {randomTexts, createElementOnResult, createInputOnResult, loadImage} from './javascript.js'
 const result = document.getElementById('result-container-jq')
 
 function showJQCode(eventName) {
@@ -65,10 +65,17 @@ const jqEventsList = {
     },
     imageLoad: function () {
         // preliminar code
+        let img = []
         createElementOnResult('jq', 'load image', result)
+        $('#result-test-div-jq').on('click', () => {
+            img = loadImage('https://media4.giphy.com/media/LmNwrBhejkK9EFP504/200.gif', result)
+        })
 
         //start 
-
+        $('img').on('load', () => {
+            console.log('image loaded')
+            $('#result-test-div-jq').text('image loaded')
+        })
     },
 }
 

@@ -25,11 +25,11 @@ function createInputOnResult(lang, placeholder, result) {
     result.append(input)
 }
 
-function loadImage(url) {
-    const img = document.createElement('img')
+function loadImage(url, result) {
+    const img = new Image();
     img.src = url
-    img.name = 'img-name'
     result.append(img)
+    return img;
 }
 
 const jsEventsList = {
@@ -98,9 +98,17 @@ const jsEventsList = {
         // preliminar code
         createElementOnResult('js', 'load image', result)
         const div = document.getElementById('result-test-div-js')
-        div.addEventListener('click', loadImage('https://preview.redd.it/l4ksbp3ttpa61.jpg?width=640&crop=smart&auto=webp&s=40cd316bf41cae8a3b9b9577b4a803bcf70e3761'))
+        let img = []
+        div.addEventListener('click', () => {
+            div.addEventListener('click', () => {
+                img = loadImage(
+                    'https://media4.giphy.com/media/LmNwrBhejkK9EFP504/200.gif', result)
+            })
+        })
 
         //start
+        // document.getElementsByTagName('img').addEventListener()
+
     },
 
 
@@ -113,4 +121,4 @@ function showResultJS(eventName) {
 
 
 
-export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult}
+export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult, loadImage}

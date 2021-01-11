@@ -6,10 +6,22 @@ function showJSCode(eventName) {
     textArea.value = jsEventsList[eventName]
 }
 
+function createElementOnResult() {
+    const div = document.createElement('div');
+    div.classList.add('result-test-div')
+    div.textContent = 'div for testing'
+    result.innerHTML = ''
+    result.append(div)
+}
+
 const jsEventsList = {
     htmlLoad: function () {
         document.onload = console.log('docu loaded');
+        createElementOnResult();
     },
+    htmlClick: function () {
+    },
+
 
 }
 

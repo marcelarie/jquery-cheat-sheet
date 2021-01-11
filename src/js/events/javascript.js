@@ -245,6 +245,19 @@ const jsEventsList = {
             }
         })
     },
+    createText: function () {
+        // preliminar code
+        createElementOnResult('js', 'create HTML', result);
+        const div = document.getElementById('result-test-div-js')
+
+        // start 
+        div.addEventListener('click', function () {
+            const h3 = document.createElement('h3')
+            h3.textContent = 'Thanks for giving me life!!'
+            result.append(h3)
+        })
+    },
+
 }
 
 // Show result

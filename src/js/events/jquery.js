@@ -154,6 +154,15 @@ const jqEventsList = {
             })
         })
     },
+    createText: function () {
+        // preliminar code
+        createElementOnResult('jq', 'create HTML', result);
+
+        // start
+        $('#result-test-div-jq').on('click', function () {
+            $('#result-container-jq').append($('<h3>Thank you for creating me!</h3>'))
+        })
+    },
 }
 
 function showResultJQ(eventName) {

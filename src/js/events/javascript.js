@@ -127,7 +127,7 @@ const jsEventsList = {
                 'https://media4.giphy.com/media/LmNwrBhejkK9EFP504/200.gif', result)
 
 
-            //start
+            // start
             img.addEventListener('load', () => {
                 div.textContent = 'image loaded'
             })
@@ -143,7 +143,7 @@ const jsEventsList = {
                 'httpsm/media/LmNwrBhejkK9EFP504/200.gif', result)
 
 
-            //start
+            // start
             img.addEventListener('error', () => {
                 img.src = 'https://image.flaticon.com/icons/png/128/2748/2748441.png'
                 div.textContent = 'url broken'
@@ -156,7 +156,7 @@ const jsEventsList = {
         const form = document.getElementById('form-submit-js')
         const inputText = document.getElementById('form-input-text-js')
 
-        //start 
+        // start 
         form.addEventListener('submit', e => {
             e.preventDefault();
             form.style.border = '5px solid red'
@@ -171,12 +171,26 @@ const jsEventsList = {
         const inputText = document.getElementById('form-input-text-js')
 
 
-        // submit
+        // start 
         form.addEventListener('submit', e => e.preventDefault())
         inputText.addEventListener('change', () => {
             form.style.border = '10px solid magenta'
             alert('change')
         })
+    },
+    mouseOver: function () {
+        // preliminar code
+        createElementOnResult('js', 'mouse over me', result);
+        const div = document.getElementById('result-test-div-js')
+
+        // start
+        div.addEventListener('mouseover', function () {
+            this.textContent = randomTexts[Math.floor(Math.random()
+                * randomTexts.length)]
+        })
+
+
+
     },
 
 

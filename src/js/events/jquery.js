@@ -114,6 +114,17 @@ const jqEventsList = {
             alert('change')
         })
     },
+    mouseOver: function () {
+        // preliminar code
+        createElementOnResult('jq', 'mouse over me', result);
+
+
+        //start
+        $('#result-test-div-jq').on('mouseover', function () {
+            $(this).text(randomTexts[Math.floor(Math.random()
+                * randomTexts.length)])
+        })
+    },
 }
 
 function showResultJQ(eventName) {

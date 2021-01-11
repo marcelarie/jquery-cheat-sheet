@@ -1,4 +1,4 @@
-import {randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm} from './javascript.js'
+import {randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm, createCheckBox} from './javascript.js'
 const result = document.getElementById('result-container-jq')
 
 function showJQCode(eventName) {
@@ -125,6 +125,23 @@ const jqEventsList = {
                 * randomTexts.length)])
         })
     },
+    checkbox: function () {
+        // preliminar code
+        createCheckBox(result, 'jq')
+
+
+        // start
+        $('#choose-me-jq').on('change', function () {
+            if ($(this).is(':checked')) {
+                $('#label-me-jq').css('font-size', '2em')
+                $('#label-me-jq').text('Checked')
+            } else {
+                $('#label-me-jq').css('font-size', '1.5em')
+                $('#label-me-jq').text('Unchecked')
+            }
+        })
+    },
+
 }
 
 function showResultJQ(eventName) {

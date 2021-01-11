@@ -55,6 +55,18 @@ function createForm(result, lang, select) {
     result.append(form)
 }
 
+function createCheckBox(result, lang) {
+    const check = document.createElement('input')
+    const label = document.createElement('label')
+    check.type = 'checkbox'
+    check.id = `choose-me-${lang}`
+    label.id = `label-me-${lang}`
+    label.textContent = 'Choose me!'
+    check.for = `choose-me-${lang}`
+    result.innerHTML = ''
+    result.append(check, label)
+}
+
 const jsEventsList = {
     htmlLoad: function () {
         // preliminar code
@@ -188,10 +200,24 @@ const jsEventsList = {
             this.textContent = randomTexts[Math.floor(Math.random()
                 * randomTexts.length)]
         })
-
-
-
     },
+    checkbox: function () {
+        // preliminar code
+        createCheckBox(result, 'js')
+        const check = document.getElementById('choose-me-js')
+        const label = document.getElementById('label-me-js')
+
+        // start
+        check.addEventListener('change', function () {
+            if (this.checked) {
+                label.style.fontSize = '2em'
+                label.textContent = 'Checked'
+            } else {
+                label.style.fontSize = '1.5em'
+                label.textContent = 'Unchecked'
+            }
+        })
+    }
 
 
 }
@@ -203,4 +229,4 @@ function showResultJS(eventName) {
 
 
 
-export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm}
+export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm, createCheckBox}

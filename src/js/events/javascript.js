@@ -247,14 +247,31 @@ const jsEventsList = {
     },
     createText: function () {
         // preliminar code
-        createElementOnResult('js', 'create HTML', result);
+        createElementOnResult('js', 'create text', result);
         const div = document.getElementById('result-test-div-js')
 
         // start 
         div.addEventListener('click', function () {
             const h3 = document.createElement('h3')
-            h3.textContent = 'Thanks for giving me life!!'
+            h3.textContent = 'thanks for giving me life!!'
             result.append(h3)
+        })
+    },
+    removeText: function () {
+        // preliminar code
+        createElementOnResult('js', 'remove text', result);
+        const div = document.getElementById('result-test-div-js')
+        const h3 = document.createElement('h3')
+        h3.textContent = 'thanks for giving me life!!'
+        result.append(h3)
+
+        // start
+        div.addEventListener('click', function () {
+            try {
+                result.removeChild(h3)
+            } catch (error) {
+                alert('NO MORE TEXT')
+            }
         })
     },
 

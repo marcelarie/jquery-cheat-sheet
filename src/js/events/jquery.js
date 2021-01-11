@@ -156,11 +156,22 @@ const jqEventsList = {
     },
     createText: function () {
         // preliminar code
-        createElementOnResult('jq', 'create HTML', result);
+        createElementOnResult('jq', 'create text', result);
 
         // start
         $('#result-test-div-jq').on('click', function () {
             $('#result-container-jq').append($('<h3>Thank you for creating me!</h3>'))
+        })
+    },
+    removeText: function () {
+        // preliminar code
+        createElementOnResult('jq', 'remove text', result);
+        const h3 = $('<h3>Thank you for creating me!</h3>')
+        $('#result-container-jq').append(h3);
+
+        // start
+        $('#result-test-div-jq').on('click', function () {
+            $(h3).one().remove()
         })
     },
 }

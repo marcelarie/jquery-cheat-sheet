@@ -1,4 +1,4 @@
-const result = document.getElementById('result-container')
+const result = document.getElementById('result-container-js')
 const randomTexts = ['random', 'text', 'windows sucks', 'linux rocks']
 
 //Show JS code
@@ -7,10 +7,10 @@ function showJSCode(eventName) {
     textArea.value = jsEventsList[eventName]
 }
 
-function createElementOnResult(text) {
+function createElementOnResult(lang, text, result) {
     const div = document.createElement('div');
     div.classList.add('result-test-div', 'no-select')
-    div.id = 'result-test-div'
+    div.id = `result-test-div-${lang}`
     div.textContent = text
     result.innerHTML = ''
     result.append(div)
@@ -18,15 +18,30 @@ function createElementOnResult(text) {
 
 const jsEventsList = {
     htmlLoad: function () {
-        document.onload = console.log('docu loaded');
-        createElementOnResult('DIV TESTING');
+        // preliminar code
+        createElementOnResult('js', 'DIV TESTING', result);
+
+        // start 
+        document.onload = console.log('docu loaded on javascript');
     },
     htmlClick: function () {
-        createElementOnResult('click on me');
-        const div = document.getElementById('result-test-div')
+        // preliminar code
+        createElementOnResult('js', 'click on me', result);
+        const div = document.getElementById('result-test-div-js')
 
-        // start of the code
+        // start
         div.addEventListener('click', () => {
+            div.textContent = randomTexts[Math.floor(Math.random()
+                * randomTexts.length)]
+        })
+    },
+    htmlDoubleClick: function () {
+        // preliminar code
+        createElementOnResult('js', 'double click on me', result);
+        const div = document.getElementById('result-test-div-js')
+
+        // start
+        div.addEventListener('dblclick', () => {
             div.textContent = randomTexts[Math.floor(Math.random()
                 * randomTexts.length)]
         })
@@ -36,10 +51,10 @@ const jsEventsList = {
 }
 
 // Show result
-function showResult(eventName) {
+function showResultJS(eventName) {
     jsEventsList[eventName]()
 }
 
 
 
-export {showJSCode, showResult, result, randomTexts, createElementOnResult}
+export {showJSCode, showResultJS, result, randomTexts, createElementOnResult}

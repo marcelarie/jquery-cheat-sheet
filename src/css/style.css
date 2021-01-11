@@ -71,18 +71,14 @@ form input {
 }
 /* result */
 .main-result {
-    margin: auto 0;
     width: 50vw;
     display: flex;
     flex-direction: column;
+    justify-content:space-around;
 }
 .result-container {
-    border-bottom: 2px solid black;
-    height: 45vh;
     margin: 0 auto;
-}
-.result-container p {
-    vertical-align: middle;
+    height: auto;
 }
 
 /* div for testing */
@@ -95,7 +91,6 @@ form input {
     margin: 0 auto;
     text-align: center;
     color: white;
-    width: 70%;
     border-radius: 10px;
 }
 

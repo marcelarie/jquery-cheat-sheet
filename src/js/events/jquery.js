@@ -1,4 +1,5 @@
-import {randomTexts, createElementOnResult, result} from './javascript.js'
+import {randomTexts, createElementOnResult} from './javascript.js'
+const result = document.getElementById('result-container-jq')
 
 function showJQCode(eventName) {
     const textArea = document.getElementById('jq-code-textarea')
@@ -7,18 +8,37 @@ function showJQCode(eventName) {
 
 const jqEventsList = {
     htmlLoad: function () {
-        $('document').load(console.log('docu loaded'))
-        createElementOnResult('DIV TESTING');
+        // preliminar code
+        createElementOnResult('jq', 'DIV TESTING', result);
+
+        // start
+        $('document').ready(console.log('docu loaded on jquery'))
     },
     htmlClick: function () {
-        createElementOnResult('click on me');
-        $('#result-test-div').on('click', () => {
-            $('#result-test-div').text = randomTexts[Math.floor(Math.random()
-                * randomTexts.length)]
+        // preliminar code
+        createElementOnResult('jq', 'click on me', result);
+
+        // start
+        $('#result-test-div-jq').on('click', () => {
+            $('#result-test-div-jq').text(randomTexts[Math.floor(Math.random()
+                * randomTexts.length)])
+        })
+    },
+    htmlDoubleClick: function () {
+        // preliminar code
+        createElementOnResult('jq', 'double click on me', result);
+
+        $('#result-test-div-jq').on('dblclick', () => {
+            $('#result-test-div-jq').text(randomTexts[Math.floor(Math.random()
+                * randomTexts.length)])
         })
     },
 
 }
 
+function showResultJQ(eventName) {
+    jqEventsList[eventName]()
+}
 
-export {showJQCode}
+
+export {showJQCode, showResultJQ}

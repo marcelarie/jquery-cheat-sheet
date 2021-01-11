@@ -14,7 +14,7 @@ const jqEventsList = {
         // start
         $('document').ready(console.log('docu loaded on jquery'))
     },
-    htmlClick: function () {
+    click: function () {
         // preliminar code
         createElementOnResult('jq', 'click on me', result);
 
@@ -24,7 +24,7 @@ const jqEventsList = {
                 * randomTexts.length)])
         })
     },
-    htmlDoubleClick: function () {
+    doubleClick: function () {
         // preliminar code
         createElementOnResult('jq', 'double click on me', result);
 
@@ -34,7 +34,7 @@ const jqEventsList = {
                 * randomTexts.length)])
         })
     },
-    htmlKeyPress: function () {
+    keyPress: function () {
         // preliminar code
         createElementOnResult('jq', 'press a key', result);
 
@@ -43,6 +43,15 @@ const jqEventsList = {
             $('#result-test-div-jq').text(randomTexts[Math.floor(Math.random()
                 * randomTexts.length)])
             $('#result-test-div-jq').css({backgroundColor: 'red'})
+        })
+    },
+    moveCursor: function () {
+        // preliminar code
+        createElementOnResult('jq', 'move the cursor', result);
+
+        // start
+        $(document).mousemove(e => {
+            $('#result-test-div-jq').text('Page X ' + e.pageX)
         })
     },
 

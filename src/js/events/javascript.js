@@ -24,7 +24,7 @@ const jsEventsList = {
         // start 
         document.onload = console.log('docu loaded on javascript');
     },
-    htmlClick: function () {
+    click: function () {
         // preliminar code
         createElementOnResult('js', 'click on me', result);
         const div = document.getElementById('result-test-div-js')
@@ -35,7 +35,7 @@ const jsEventsList = {
                 * randomTexts.length)]
         })
     },
-    htmlDoubleClick: function () {
+    doubleClick: function () {
         // preliminar code
         createElementOnResult('js', 'double click on me', result);
         const div = document.getElementById('result-test-div-js')
@@ -46,7 +46,7 @@ const jsEventsList = {
                 * randomTexts.length)]
         })
     },
-    htmlKeyPress: function () {
+    keyPress: function () {
         // preliminar code
         createElementOnResult('js', 'press a key', result);
         const div = document.getElementById('result-test-div-js')
@@ -57,6 +57,17 @@ const jsEventsList = {
                 * randomTexts.length)]
             div.style.backgroundColor = 'red'
         })
+    },
+    moveCursor: function () {
+        // preliminar code
+        createElementOnResult('js', 'move the cursor', result);
+        const div = document.getElementById('result-test-div-js')
+
+        // start
+        document.addEventListener('mousemove', e => {
+            div.innerText = 'Page Y ' + e.pageY
+        })
+
     },
 
 

@@ -16,6 +16,15 @@ function createElementOnResult(lang, text, result) {
     result.append(div)
 }
 
+function createInputOnResult(lang, placeholder, result) {
+    const input = document.createElement('input')
+    input.classList.add('result-test-input', `result-test-input-${lang}`)
+    input.id = `result-test-input-${lang}`
+    input.placeholder = placeholder
+    result.innerHTML = ''
+    result.append(input)
+}
+
 const jsEventsList = {
     htmlLoad: function () {
         // preliminar code
@@ -67,7 +76,16 @@ const jsEventsList = {
         document.addEventListener('mousemove', e => {
             div.innerText = 'Page Y ' + e.pageY
         })
+    },
+    changeValue: function () {
+        // preliminar code
+        createInputOnResult('js', 'Put text here', result)
+        const input = document.getElementById('result-test-input-js')
 
+        // start 
+        input.addEventListener('input', () => {
+            console.log(input.classList.toggle('big-input'))
+        })
     },
 
 
@@ -80,4 +98,4 @@ function showResultJS(eventName) {
 
 
 
-export {showJSCode, showResultJS, result, randomTexts, createElementOnResult}
+export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult}

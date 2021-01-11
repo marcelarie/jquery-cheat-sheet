@@ -46,11 +46,11 @@ form select {
     font-size: 1em;
     padding: 1em;
 }
-form input {
+input {
     padding: 1em;
     font-size: 1em;
-
 }
+
 .js-code {
     height: 45vh;
 }
@@ -92,6 +92,10 @@ form input {
     text-align: center;
     color: white;
     border-radius: 10px;
+}
+/* input for testing */
+.big-input {
+    padding: 50px;
 }
 
 /* no select  */

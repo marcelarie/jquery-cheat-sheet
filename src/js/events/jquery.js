@@ -1,4 +1,4 @@
-import {randomTexts, createElementOnResult} from './javascript.js'
+import {randomTexts, createElementOnResult, createInputOnResult} from './javascript.js'
 const result = document.getElementById('result-container-jq')
 
 function showJQCode(eventName) {
@@ -54,7 +54,15 @@ const jqEventsList = {
             $('#result-test-div-jq').text('Page X ' + e.pageX)
         })
     },
+    changeValue: function () {
+        // preliminar code
+        createInputOnResult('jq', 'Put text and press enter', result)
 
+        // start 
+        $('#result-test-input-jq').change(() => {
+            $('#result-test-input-jq').css('padding', '+=5')
+        })
+    },
 }
 
 function showResultJQ(eventName) {

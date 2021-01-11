@@ -35,15 +35,30 @@ main {
     flex-direction: column;
     flex: 1;
 }
+form {
+    font-family: 'Fira Code', monospace;
+}
+form label {
+    font-size: 1em;
+    font-weight: bold;
+}
+form select {
+    font-size: 1em;
+    padding: 1em;
+}
+form input {
+    padding: 1em;
+    font-size: 1em;
+
+}
 .js-code {
     height: 45vh;
-    font-size: 2em;
 }
 .js-code textarea { 
     height: 45vh;
     width: 50vw;
     font-family: 'Fira Code', monospace;
-    font-size: 0.45em;
+    font-size: 0.9em;
 }
 .jquery-code {
     height: 45vh;
@@ -51,8 +66,8 @@ main {
 .jquery-code textarea { 
     height: 45vh;
     width: 50vw;
-    font-size: 0.45em;
     font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
 }
 /* result */
 .main-result {

@@ -36,6 +36,7 @@ main {
 }
 .js-code {
     height: 45vh;
+    font-size: 2em;
 }
 .js-code textarea { 
     height: 45vh;

@@ -13,10 +13,10 @@
     <header>
         <h1>JQuery Cheat Sheet</h1>
         <nav>
-            <form>
+            <form id="selector-form">
                 <label for="jquery-vs-js">Select event:</label>
                 <select for="jquery-vs-js" id="jquery-vs-js">
-                    <option>HTML load</option>
+                    <option value="htmlLoad">HTML load</option>
                     <option>Clicked item</option>
                     <option>Double-clicked item</option>
                     <option>Key press</option>
@@ -59,21 +59,21 @@
                     <option>Remove all items from a specific selector</option>
                     <option>Animate an item after 2 seconds from the initial page load</option>
                 </select>
-                <input type="submit" value="Try">
+                <input id="event-submit" type="submit" value="Try">
             </form>
         </nav>
     </header>
     <main class="main-cointainer">
         <section class="main-code">
             <div class="js-code">
-                <textarea></textarea>
+                <textarea id="js-code-textarea"></textarea>
             </div>
             <div class="jquery-code">
-                <textarea></textarea>
+                <textarea id="jq-code-textarea"></textarea>
             </div>
         </section>
         <section class="main-result">
-            <div class="result-container">
+            <div class="result-container" id="result-container">
                 <!--lorem-->
                 <p>Lorem. Nam leo. In eget pede. Donec porta.</p>
 

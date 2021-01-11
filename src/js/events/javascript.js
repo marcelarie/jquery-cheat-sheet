@@ -67,6 +67,17 @@ function createCheckBox(result, lang) {
     result.append(check, label)
 }
 
+function createListItems(result, lang) {
+    const ul = document.createElement('ul')
+    const li = document.createElement('li')
+    li.textContent = 'Item list'
+    ul.id = `ul-list-${lang}`
+    ul.append(li)
+
+    result.innerHTML = ''
+    result.append(ul)
+}
+
 const jsEventsList = {
     htmlLoad: function () {
         // preliminar code
@@ -217,9 +228,23 @@ const jsEventsList = {
                 label.textContent = 'Unchecked'
             }
         })
-    }
+    },
+    listItemClick: function () {
+        // preliminar code
+        createListItems(result, 'js');
+        const ul = document.getElementById('ul-list-js')
 
-
+        // start
+        ul.addEventListener('click', function (e) {
+            for (let li = 0; li < ul.children.length; li++) {
+                if (e.target === ul.children[li]) {
+                    e.target.style.fontSize = '20px'
+                    e.target.style.fontWeight = 'bold'
+                    e.target.style.color = 'red'
+                }
+            }
+        })
+    },
 }
 
 // Show result
@@ -229,4 +254,4 @@ function showResultJS(eventName) {
 
 
 
-export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm, createCheckBox}
+export {showJSCode, showResultJS, result, randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm, createCheckBox, createListItems}

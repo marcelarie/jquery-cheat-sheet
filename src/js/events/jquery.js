@@ -1,4 +1,4 @@
-import {randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm, createCheckBox} from './javascript.js'
+import {randomTexts, createElementOnResult, createInputOnResult, loadImage, createForm, createCheckBox, createListItems} from './javascript.js'
 const result = document.getElementById('result-container-jq')
 
 function showJQCode(eventName) {
@@ -141,7 +141,19 @@ const jqEventsList = {
             }
         })
     },
+    listItemClick: function () {
+        // preliminar code
+        createListItems(result, 'jq');
 
+        // start 
+        $('#ul-list-jq').on('click', function (e) {
+            $(e.target).css({
+                fontSize: '20px',
+                fontWeight: 'bold',
+                color: 'blue'
+            })
+        })
+    },
 }
 
 function showResultJQ(eventName) {

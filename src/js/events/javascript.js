@@ -46,6 +46,18 @@ const jsEventsList = {
                 * randomTexts.length)]
         })
     },
+    htmlKeyPress: function () {
+        // preliminar code
+        createElementOnResult('js', 'press a key', result);
+        const div = document.getElementById('result-test-div-js')
+
+        // start
+        document.addEventListener('keypress', () => {
+            div.textContent = randomTexts[Math.floor(Math.random()
+                * randomTexts.length)]
+            div.style.backgroundColor = 'red'
+        })
+    },
 
 
 }

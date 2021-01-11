@@ -28,9 +28,21 @@ const jqEventsList = {
         // preliminar code
         createElementOnResult('jq', 'double click on me', result);
 
+        // start
         $('#result-test-div-jq').on('dblclick', () => {
             $('#result-test-div-jq').text(randomTexts[Math.floor(Math.random()
                 * randomTexts.length)])
+        })
+    },
+    htmlKeyPress: function () {
+        // preliminar code
+        createElementOnResult('jq', 'press a key', result);
+
+        // start
+        $(document).keypress(() => {
+            $('#result-test-div-jq').text(randomTexts[Math.floor(Math.random()
+                * randomTexts.length)])
+            $('#result-test-div-jq').css({backgroundColor: 'red'})
         })
     },
 
